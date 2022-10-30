@@ -1,0 +1,194 @@
+:root {
+  --header-color: #ffffff;
+  --primary-color: #2b6777;
+  --secondary-color: #52ab98;
+  --main-radius:5px;
+  --main-padding:5px;  
+
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  line-height: 1.5;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+.container {
+  display:grid;
+  height:100vh;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 0.3fr 1.5fr 1.2fr 0.2fr;
+  grid-template-areas: 
+  "nav nav nav nav"
+  "sidebar main main main"
+  "sidebar content1 content2 content3"
+  "sidebar footer footer footer";
+  grid-gap: 0.2rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  font-size: 12px;
+}
+
+/* .container-style {
+  border-radius: var(--main-radius);
+  padding-top: var(--main-padding);
+}
+ */
+
+nav{
+  background:var(--header-color);
+  grid-area: nav;
+  border-radius: var(--main-radius);
+  padding-top: var(--main-padding);
+
+}
+
+/* nav properties */
+
+.nav-list{
+  background: white;
+  box-shadow: 0px 0px 10px black;
+  padding:1rem 0;
+  display:flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.nav-item{
+  list-style:none;
+  margin-right:2rem;
+}
+
+.nav-item a {
+  text-decoration: none;
+  color:black;
+  transition: all 200ms ease-in;
+}
+
+.nav-item a:hover{
+  color:var(--secondary-color);
+}
+
+.nav-item:first-child{
+  margin-right: auto;
+  margin-left:2rem
+}
+
+.btn-primary {
+  background-color: var(--secondary-color);
+  border:none;
+  outline:none;
+  padding:0.5rem 1rem;
+  border-radius: 0.2rem;
+  cursor:pointer;
+  transition: all 200ms ease-in;
+}
+
+.btn-primary:hover {
+  background: var(--primary-color);
+}
+
+main{
+  background:var(--primary-color);
+  grid-area: main;
+  border-radius: var(--main-radius);
+  padding-top: var(--main-padding);
+}
+
+#sidebar { 
+  background:var(--primary-color);
+  grid-area: sidebar;
+  border-radius: var(--main-radius);
+  padding-top: var(--main-padding);
+}
+
+#content1 {
+  background:var(--primary-color);
+  grid-area: content1;
+  border-radius: var(--main-radius);
+  padding-top: var(--main-padding);
+}
+
+#content2 {
+  background:var(--primary-color);
+  grid-area: content2;
+  border-radius: var(--main-radius);
+  padding-top: var(--main-padding);
+}
+
+#content3 {
+  background:var(--primary-color);
+  grid-area: content3;
+  border-radius: var(--main-radius);
+  padding-top: var(--main-padding);
+}
+
+footer {
+  background:var(--primary-color);
+  grid-area: footer;
+  border-radius: var(--main-radius);
+  padding-top: var(--main-padding);
+}
+
+@media only screen and (max-width:550px) {
+.container {
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.4fr 2.2fr 0.8fr 1.2fr 1.2fr 1.2fr 0.8fr;
+    grid-template-areas: 
+    "nav"
+    "main"
+    "sidebar"
+    "content1"
+    "content2"
+    "content3"
+    "footer";
+  }
+
+/* header properties */
+
+
+
+
+
